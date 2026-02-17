@@ -1,0 +1,43 @@
+# OS
+.DS_Store
+
+# Backend
+backend/.env
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.pyc
+backend/logs/*.log
+
+# Frontend (Next.js)
+frontend-next/node_modules/
+frontend-next/.next/
+frontend-next/out/
+frontend-next/.pnp
+frontend-next/.pnp.js
+frontend-next/.env*.local
+
+# Frontend (Vite) – if you still use it
+frontend/node_modules/
+frontend/dist/
+
+# Logs (run.sh)
+logs/*.log
+
+# Python
+*.pyc
+__pycache__/
+*.egg-info/
+.eggs/
+
+# Env (keep .env.example)
+.env
+.env.local
+.env.*.local
+
+# IDE / misc
+*.pem
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
