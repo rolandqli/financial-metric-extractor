@@ -64,7 +64,7 @@ Logs are written to **`logs/backend.log`** and **`logs/frontend.log`**.
 ## Requirements
 
 - **Python** 3.9+
-- **Node.js** 18+
+- **Next.js**
 
 ## Documentation
 
