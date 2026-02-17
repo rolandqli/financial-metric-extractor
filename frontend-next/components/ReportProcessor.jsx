@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { processReports } from "@/lib/reportService";
 
-export function ReportProcessor() {
+export function ReportProcessor({ onProcessSuccess }) {
   const [files, setFiles] = useState([]);
   const [error, setError] = useState("");
   const [excelUrl, setExcelUrl] = useState(null);
@@ -36,6 +36,7 @@ export function ReportProcessor() {
       const blob = await processReports(files);
       const url = window.URL.createObjectURL(blob);
       setExcelUrl(url);
+      onProcessSuccess?.();
     } catch (err) {
       console.error(err);
       setError("Something went wrong while processing the files.");

@@ -80,6 +80,8 @@ def get_download_url(extraction_id: str, expiry_seconds: int = 3600) -> Optional
     path = f"{extraction_id}.xlsx"
     try:
         signed = client.storage.from_(_BUCKET).create_signed_url(path, expiry_seconds)
-        return signed.get("signedUrl") or signed.get("path")
+        if isinstance(signed, str):
+            return signed
+        return signed.get("signedUrl") or signed.get("path") or signed.get("signed_url")
     except Exception:
         return None
